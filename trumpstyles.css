@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+*{
+  visibility: visible;
+}
+body {
+  background-color: steelblue;
+  display: flex;
+  justify-content: center;
+  font-family: 'Work Sans';
+  font-size: 6vh;
+}
+#container {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  padding: 20vh;
+}
+.card {
+  width: 50%;
+  text-align: center;
+}
+/* .damage-display {
+  height: 400px;
+  width: 400px;
+} */

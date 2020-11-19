@@ -1,41 +1,18 @@
-const { fullDeck } = require('./cards');
-const { shuffle, compareDamage } = require('./functions');
-
-let shuffledDeck = shuffle(fullDeck),
-  deck1 = shuffledDeck.slice(0, 15),
+import { fullDeck } from './cards.js';
+import { shuffle, compareDamage } from './functions.js';
+const cardTitles = document.getElementsByClassName('title');//getting display elements
+const damageDisplay = document.getElementsByClassName('damageDisplay');
+const speedDisplay = document.getElementsByClassName('speedDisplay');
+const alignDisplay = document.getElementsByClassName('alignmentDisplay');
+let shuffledDeck = shuffle(fullDeck),//shuffles the deck !consider moving to cards.js 
+  deck1 = shuffledDeck.slice(0, 15),//splits into decks
   deck2 = shuffledDeck.slice(15),
   limbo = []; // shuffles the deck
-
-// while (deck1.length > 0 && deck2.length > 0) {
-for (let i = 0; i < 5000; i++) {
-  // console.log(deck1[0].name, deck2[0].name, limbo);
-  // console.log(deck1[deck1.length - 1].name, deck2[deck2.length - 1].name);
-  let winner = compareDamage(deck1[0], deck2[0]);
-  if (winner == 0) {
-    console.log(`It's a draw`);
-    limbo.push(deck1.shift(), deck2.shift());
-  } else if (winner == 1) {
-    console.log(
-      `${deck1[0].name} from deck1 beats ${deck2[0].name} from deck2`
-    );
-    deck1.push(...limbo, deck1.shift(), deck2.shift());
-    limbo = [];
-  } else if (winner == 2) {
-    console.log(
-      `${deck2[0].name} from deck2 beats ${deck1[0].name} from deck1`
-    );
-    deck2.push(...limbo, deck1.shift(), deck2.shift());
-    limbo = [];
-  } else {
-    console.log(`something's gone wrong`);
-    break;
-  }
-  // console.log(deck1.length, deck2.length, limbo.length);
-  // console.log(deck1[0].name, deck2[0].name, limbo);
-  // console.log(deck1[deck1.length - 1].name, deck2[deck2.length - 1].name);
-}
-for (let i = 0; i < fullDeck.length; i++) {
-  console.log(fullDeck[i]);
-}
-console.log(deck1.length, deck1);
-console.log(deck2.length, deck2);
+cardTitles[0].textContent = deck1[0].name;//displays card titles
+cardTitles[1].textContent = deck2[0].name;
+damageDisplay[0].textContent = `Damage: ${deck1[0].damage}`//displays attributes...
+damageDisplay[1].textContent = `Damage: ${deck2[0].damage}`
+speedDisplay[0].textContent = `Speed: ${deck1[0].speed}`
+speedDisplay[1].textContent = `Speed: ${deck2[0].speed}`
+alignDisplay[0].textContent = `Alignment: ${deck1[0].alignment[0]}`
+alignDisplay[1].textContent = `Alignment: ${deck2[0].alignment[0]}`
