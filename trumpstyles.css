@@ -1,25 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
-*{
-  visibility: visible;
-}
-body {
-  background-color: steelblue;
-  display: flex;
-  justify-content: center;
+* {
   font-family: 'Work Sans';
   font-size: 6vh;
+  color: darkslategrey;
+  cursor: default;
 }
-#container {
-  width: 70%;
+body {
+  background-color: lightblue;
   display: flex;
   justify-content: center;
-  padding: 20vh;
+}
+#container {
+  width: 1000px;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+#buttonContainer {
+  width: 100%;
+  padding-bottom: 3vmin;
+  display: flex;
+  justify-content: center;
+}
+#playButton {
+  background-color: floralwhite;
+  border-radius: 10px;
+  border: 3px solid darkslategray;
+  padding: 1%;
 }
 .card {
-  width: 50%;
   text-align: center;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 35%;
+  border: 3px solid darkslategray;
+  height: 80%;
+  margin: 1%;
 }
-/* .damage-display {
-  height: 400px;
-  width: 400px;
-} */
+.title {
+  padding-top: 3vh;
+  width: 100%;
+}
+.cardAttributes {
+  width: 100%;
+  padding: 20px 10px;
+  font-size: 70%;
+}
+.cardAttributes:hover{
+  border-radius: 9px;
+  background-color: rgb(119, 128, 128, 0.1);
+  transition: background-color 0.4s;
+}
+#card1 {
+  background-color: mintcream;
+}
+#card2 {
+  background-color: lightcyan;
+}
+#statsContainer{
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+}

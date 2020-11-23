@@ -8,20 +8,28 @@
   </head>
   <body>
     <div id="container">
+      <div id="buttonContainer"><button id="playButton">Play</button></div>
       <div id="card1" class="card">
         <div id="card1Title" class="title"></div>
         <div id="card1Damage" class="damageDisplay cardAttributes"></div>
+        <div id="card1HP" class="hPDisplay cardAttributes"></div>
         <div id="card1Speed" class="speedDisplay cardAttributes"></div>
         <div id="card1Alignment" class="alignmentDisplay cardAttributes"></div>
       </div>
-      <div id='card2'class='card'>
-      <div id="card2Title" class="title"></div>
+      <div id="card2" class="card">
+        <div id="card2Title" class="title"></div>
         <div id="card2Damage" class="damageDisplay cardAttributes"></div>
+        <div id="card2HP" class="hPDisplay cardAttributes"></div>
         <div id="card2Speed" class="speedDisplay cardAttributes"></div>
         <div id="card2Alignment" class="alignmentDisplay cardAttributes"></div>
       </div>
+      <div id="statsContainer">
+        <div id="deck1Size" class="deckSize">15</div>
+        <div id="deck2Size" class="deckSize">15</div>
+      </div>
     </div>
   </body>
+
   <script type="module" src="./cards.js"></script>
   <script type="module" src="./functions.js"></script>
   <script type="module" src="./app.js"></script>
